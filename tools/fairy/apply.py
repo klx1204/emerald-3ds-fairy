@@ -303,8 +303,8 @@ def apply_moves(tree: Path) -> None:
 
     path = tree / "data/battle_anim_scripts.s"
     text = read(path)
-    if "# Fairy moves" not in text:
-        anims = "# Fairy moves\n" + "".join("\t.int %s\n" % m["anim"] for m in MOVES)
+    if "// Fairy moves" not in text:
+        anims = "// Fairy moves\n" + "".join("\t.int %s\n" % m["anim"] for m in MOVES)
         text = insert_before(text, "\t.int Move_COUNT /*", anims, "move animations")
     write(path, text)
 

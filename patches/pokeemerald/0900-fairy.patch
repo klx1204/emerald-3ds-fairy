@@ -1,12 +1,12 @@
 diff --git a/data/battle_anim_scripts.s b/data/battle_anim_scripts.s
-index ac24884..635f11d 100644
+index ac24884..4af7827 100644
 --- a/data/battle_anim_scripts.s
 +++ b/data/battle_anim_scripts.s
 @@ -371,6 +371,14 @@ gBattleAnims_Moves::
  	.int Move_WATER_PULSE
  	.int Move_DOOM_DESIRE
  	.int Move_PSYCHO_BOOST
-+# Fairy moves
++// Fairy moves
 +	.int Move_GUST
 +	.int Move_SWIFT
 +	.int Move_SLAM

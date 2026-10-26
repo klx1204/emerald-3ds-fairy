@@ -14,6 +14,13 @@ only the original Emerald 3DS work.
 
 ## Code derived from third parties
 
+- **Complete-Fire-Red-Upgrade (CFRU)** — https://github.com/Skeli789/Complete-Fire-Red-Upgrade.
+  The Fairy type label artwork in `graphics/types/fairy.png` and the appended
+  Fairy label in `graphics/interface/menu_info.png` are adapted from CFRU's
+  `graphics/Other/Type_Icons/Type_Icons.bmp`. CFRU's README requires that
+  projects using its code or assets never be sold and never solicit donations
+  for the game; this fork is non-commercial and accepts no donations.
+
 - **pokeemerald-multiplatform** (gradenGnostic/pokeemerald-multiplatform,
   commit db1cab3d2dc9f0e0a9f4a3d67983e5acf30a9a46), MIT. The voxel overworld
   in `3ds_port/src/voxel/` reuses the logic of its SDL2/OpenGL voxel renderer

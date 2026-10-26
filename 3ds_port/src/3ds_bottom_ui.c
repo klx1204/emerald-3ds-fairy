@@ -1052,7 +1052,7 @@ static const u8 sTypeIconPal[NUMBER_OF_MON_TYPES] = {
     [TYPE_GROUND] = 0, [TYPE_ROCK] = 0, [TYPE_BUG] = 2, [TYPE_GHOST] = 1,
     [TYPE_STEEL] = 0, [TYPE_MYSTERY] = 2, [TYPE_FIRE] = 0, [TYPE_WATER] = 1,
     [TYPE_GRASS] = 2, [TYPE_ELECTRIC] = 0, [TYPE_PSYCHIC] = 1, [TYPE_ICE] = 1,
-    [TYPE_DRAGON] = 2, [TYPE_DARK] = 0,
+    [TYPE_DRAGON] = 2, [TYPE_DARK] = 0, [TYPE_FAIRY] = 1,
 };
 
 /* A move plate's colour: the main colour of the type's own label, its most

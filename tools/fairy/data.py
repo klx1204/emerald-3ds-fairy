@@ -1,0 +1,248 @@
+"""Fairy-type data for the Emerald 3DS fork.
+
+Move stats come from Pokémon Showdown's Gen 6 data (data/moves.ts, and
+data/mods/gen6/ overrides where they exist).  Learnsets come from the
+Gen 6 tags in data/learnsets.ts (`6L` level-up, `6E` egg); no level is
+invented here.  The type chart is the standard Gen 6 chart.
+"""
+
+# New moves, in the order their IDs are assigned (355..361).
+# Light of Ruin is deliberately absent: it is Eternal Flower Floette's
+# signature move and is not obtainable in this game.
+MOVES = [
+    dict(
+        const="MOVE_FAIRY_WIND",
+        id=355,
+        name="FAIRY WIND",
+        desc="A gust of fairy wind\\nthat strikes the foe.",
+        effect="EFFECT_HIT",
+        power=40,
+        accuracy=100,
+        pp=30,
+        secondary=0,
+        target="MOVE_TARGET_SELECTED",
+        priority=0,
+        flags=["FLAG_PROTECT_AFFECTED", "FLAG_MIRROR_MOVE_AFFECTED", "FLAG_KINGS_ROCK_AFFECTED"],
+        category="MOVE_CATEGORY_SPECIAL",
+        anim="Move_GUST",
+        contest=("CONTEST_EFFECT_HIGHLY_APPEALING", "CONTEST_CATEGORY_BEAUTY"),
+    ),
+    dict(
+        const="MOVE_MOONBLAST",
+        id=356,
+        name="MOONBLAST",
+        desc="Borrows the moon's power.\\nMay lower Sp. Atk.",
+        effect="EFFECT_SPECIAL_ATTACK_DOWN_HIT",
+        power=95,
+        accuracy=100,
+        pp=15,
+        secondary=30,
+        target="MOVE_TARGET_SELECTED",
+        priority=0,
+        flags=["FLAG_PROTECT_AFFECTED", "FLAG_MIRROR_MOVE_AFFECTED"],
+        category="MOVE_CATEGORY_SPECIAL",
+        anim="Move_SWIFT",
+        contest=("CONTEST_EFFECT_HIGHLY_APPEALING", "CONTEST_CATEGORY_CUTE"),
+    ),
+    dict(
+        const="MOVE_PLAY_ROUGH",
+        id=357,
+        name="PLAY ROUGH",
+        desc="Plays rough with the foe.\\nMay lower Attack.",
+        effect="EFFECT_ATTACK_DOWN_HIT",
+        power=90,
+        accuracy=90,
+        pp=10,
+        secondary=10,
+        target="MOVE_TARGET_SELECTED",
+        priority=0,
+        flags=[
+            "FLAG_MAKES_CONTACT",
+            "FLAG_PROTECT_AFFECTED",
+            "FLAG_MIRROR_MOVE_AFFECTED",
+            "FLAG_KINGS_ROCK_AFFECTED",
+        ],
+        category="MOVE_CATEGORY_PHYSICAL",
+        anim="Move_SLAM",
+        contest=("CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS", "CONTEST_CATEGORY_TOUGH"),
+    ),
+    dict(
+        const="MOVE_DAZZLING_GLEAM",
+        id=358,
+        name="DAZZLE GLEAM",
+        desc="Dazzles the foe with a\\npowerful flash of light.",
+        effect="EFFECT_HIT",
+        power=80,
+        accuracy=100,
+        pp=10,
+        secondary=0,
+        target="MOVE_TARGET_BOTH",
+        priority=0,
+        flags=["FLAG_PROTECT_AFFECTED", "FLAG_MIRROR_MOVE_AFFECTED", "FLAG_KINGS_ROCK_AFFECTED"],
+        category="MOVE_CATEGORY_SPECIAL",
+        anim="Move_FLASH",
+        contest=("CONTEST_EFFECT_HIGHLY_APPEALING", "CONTEST_CATEGORY_BEAUTY"),
+    ),
+    dict(
+        const="MOVE_DISARMING_VOICE",
+        id=359,
+        name="DISARM VOICE",
+        desc="A charming cry that\\nnever misses.",
+        effect="EFFECT_ALWAYS_HIT",
+        power=40,
+        accuracy=0,
+        pp=15,
+        secondary=0,
+        target="MOVE_TARGET_BOTH",
+        priority=0,
+        flags=["FLAG_PROTECT_AFFECTED", "FLAG_MIRROR_MOVE_AFFECTED", "FLAG_KINGS_ROCK_AFFECTED"],
+        category="MOVE_CATEGORY_SPECIAL",
+        anim="Move_GROWL",
+        contest=("CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS", "CONTEST_CATEGORY_CUTE"),
+    ),
+    dict(
+        const="MOVE_DRAINING_KISS",
+        id=360,
+        name="DRAIN KISS",
+        desc="Steals the foe's HP with\\na kiss. Restores own HP.",
+        effect="EFFECT_ABSORB",
+        power=50,
+        accuracy=100,
+        pp=10,
+        secondary=0,
+        target="MOVE_TARGET_SELECTED",
+        priority=0,
+        flags=["FLAG_MAKES_CONTACT", "FLAG_PROTECT_AFFECTED", "FLAG_MIRROR_MOVE_AFFECTED"],
+        category="MOVE_CATEGORY_SPECIAL",
+        anim="Move_ABSORB",
+        contest=("CONTEST_EFFECT_HIGHLY_APPEALING", "CONTEST_CATEGORY_CUTE"),
+    ),
+    dict(
+        const="MOVE_BABY_DOLL_EYES",
+        id=361,
+        name="BABY-DOLL",
+        desc="Lowers the foe's Attack\\nwith cute eyes. Goes first.",
+        effect="EFFECT_ATTACK_DOWN",
+        power=0,
+        accuracy=100,
+        pp=30,
+        secondary=0,
+        target="MOVE_TARGET_SELECTED",
+        priority=1,
+        flags=["FLAG_PROTECT_AFFECTED", "FLAG_MAGIC_COAT_AFFECTED", "FLAG_MIRROR_MOVE_AFFECTED"],
+        category="MOVE_CATEGORY_STATUS",
+        anim="Move_CHARM",
+        contest=("CONTEST_EFFECT_BETTER_IF_LAST", "CONTEST_CATEGORY_CUTE"),
+    ),
+]
+
+# Existing moves whose type changed to Fairy in Gen 6.
+RETYPE_MOVES = {
+    "MOVE_CHARM": "TYPE_FAIRY",
+    "MOVE_SWEET_KISS": "TYPE_FAIRY",
+    "MOVE_MOONLIGHT": "TYPE_FAIRY",
+}
+
+# Gen 6 Fairy retcons among the 386 Pokémon available in Emerald.
+SPECIES_TYPES = {
+    "CLEFFA": ("TYPE_FAIRY", "TYPE_FAIRY"),
+    "CLEFAIRY": ("TYPE_FAIRY", "TYPE_FAIRY"),
+    "CLEFABLE": ("TYPE_FAIRY", "TYPE_FAIRY"),
+    "IGGLYBUFF": ("TYPE_NORMAL", "TYPE_FAIRY"),
+    "JIGGLYPUFF": ("TYPE_NORMAL", "TYPE_FAIRY"),
+    "WIGGLYTUFF": ("TYPE_NORMAL", "TYPE_FAIRY"),
+    "MR_MIME": ("TYPE_PSYCHIC", "TYPE_FAIRY"),
+    "SNUBBULL": ("TYPE_FAIRY", "TYPE_FAIRY"),
+    "GRANBULL": ("TYPE_FAIRY", "TYPE_FAIRY"),
+    "RALTS": ("TYPE_PSYCHIC", "TYPE_FAIRY"),
+    "KIRLIA": ("TYPE_PSYCHIC", "TYPE_FAIRY"),
+    "GARDEVOIR": ("TYPE_PSYCHIC", "TYPE_FAIRY"),
+    "MAWILE": ("TYPE_STEEL", "TYPE_FAIRY"),
+    "AZURILL": ("TYPE_NORMAL", "TYPE_FAIRY"),
+    "MARILL": ("TYPE_WATER", "TYPE_FAIRY"),
+    "AZUMARILL": ("TYPE_WATER", "TYPE_FAIRY"),
+    "TOGEPI": ("TYPE_FAIRY", "TYPE_FAIRY"),
+    "TOGETIC": ("TYPE_FAIRY", "TYPE_FLYING"),
+}
+
+# Standard Gen 6 chart.  Only non-1x entries are listed.
+TYPE_CHART = [
+    ("TYPE_FAIRY", "TYPE_FIGHTING", "TYPE_MUL_SUPER_EFFECTIVE"),
+    ("TYPE_FAIRY", "TYPE_DRAGON", "TYPE_MUL_SUPER_EFFECTIVE"),
+    ("TYPE_FAIRY", "TYPE_DARK", "TYPE_MUL_SUPER_EFFECTIVE"),
+    ("TYPE_FAIRY", "TYPE_FIRE", "TYPE_MUL_NOT_EFFECTIVE"),
+    ("TYPE_FAIRY", "TYPE_POISON", "TYPE_MUL_NOT_EFFECTIVE"),
+    ("TYPE_FAIRY", "TYPE_STEEL", "TYPE_MUL_NOT_EFFECTIVE"),
+    ("TYPE_FIGHTING", "TYPE_FAIRY", "TYPE_MUL_NOT_EFFECTIVE"),
+    ("TYPE_BUG", "TYPE_FAIRY", "TYPE_MUL_NOT_EFFECTIVE"),
+    ("TYPE_DARK", "TYPE_FAIRY", "TYPE_MUL_NOT_EFFECTIVE"),
+    ("TYPE_DRAGON", "TYPE_FAIRY", "TYPE_MUL_NO_EFFECT"),
+    ("TYPE_POISON", "TYPE_FAIRY", "TYPE_MUL_SUPER_EFFECTIVE"),
+    ("TYPE_STEEL", "TYPE_FAIRY", "TYPE_MUL_SUPER_EFFECTIVE"),
+]
+
+# Gen 6 level-up data for the new moves.  Every entry is an actual `6L`
+# tag in Pokémon Showdown's learnsets; no level is invented.
+LEVEL_UP = {
+    "MOVE_FAIRY_WIND": [
+        ("TOGETIC", 14),
+        ("HOPPIP", 10),
+        ("SKIPLOOM", 10),
+        ("JUMPLUFF", 10),
+        ("MAWILE", 1),
+    ],
+    "MOVE_MOONBLAST": [
+        ("CLEFAIRY", 46),
+        ("ODDISH", 43),
+        ("GARDEVOIR", 1),
+        ("SWABLU", 46),
+        ("ALTARIA", 52),
+        ("LUNATONE", 1),
+    ],
+    "MOVE_PLAY_ROUGH": [
+        ("WIGGLYTUFF", 1),
+        ("PERSIAN", 1),
+        ("MARILL", 23),
+        ("AZUMARILL", 25),
+        ("SNUBBULL", 37),
+        ("GRANBULL", 43),
+        ("LINOONE", 1),
+        ("SLAKOTH", 38),
+        ("SKITTY", 46),
+        ("MAWILE", 1),
+        ("VOLBEAT", 43),
+        ("ILLUMISE", 43),
+    ],
+    "MOVE_DISARMING_VOICE": [
+        ("CLEFAIRY", 1),
+        ("CLEFABLE", 1),
+        ("JIGGLYPUFF", 11),
+        ("RALTS", 11),
+        ("KIRLIA", 11),
+        ("GARDEVOIR", 11),
+        ("SKITTY", 13),
+        ("SWABLU", 11),
+        ("ALTARIA", 11),
+        ("MILOTIC", 11),
+    ],
+    "MOVE_DRAINING_KISS": [
+        ("JYNX", 1),
+        ("RALTS", 22),
+        ("KIRLIA", 23),
+        ("GARDEVOIR", 23),
+        ("GOREBYSS", 11),
+        ("LUVDISC", 9),
+    ],
+    "MOVE_BABY_DOLL_EYES": [
+        ("VULPIX", 9),
+        ("EEVEE", 9),
+        ("TEDDIURSA", 1),
+        ("ZIGZAGOON", 11),
+    ],
+}
+
+# Gen 6 egg moves (`6E`) for Pokémon available in Emerald.
+EGG_MOVES = {
+    "MOVE_PLAY_ROUGH": ["TEDDIURSA", "PHANPY", "POOCHYENA", "ABSOL"],
+    "MOVE_DISARMING_VOICE": ["PICHU", "WHISMUR"],
+}

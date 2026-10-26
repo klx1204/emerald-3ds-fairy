@@ -1,5 +1,36 @@
 # Changelog
 
+## 0.4.0-fairy.1 — 2026-10-27
+
+Unofficial Fairy fork, based on upstream Emerald 3DS 0.4.0.
+
+- Added the Fairy type as type 18, with the standard Gen 6 effectiveness
+  chart (Fairy beats Fighting, Dragon and Dark; is resisted by Fire, Poison
+  and Steel; takes super-effective damage from Poison and Steel; is immune
+  to Dragon; resists Fighting, Bug and Dark).
+- Applied the Gen 6 Fairy retcons to the 18 Pokémon available in Emerald:
+  Cleffa/Clefairy/Clefable, Igglybuff/Jigglypuff/Wigglytuff, Mr. Mime,
+  Snubbull/Granbull, Ralts/Kirlia/Gardevoir, Mawile, Azurill/Marill/Azumarill
+  and Togepi/Togetic.
+- Retyped Charm, Sweet Kiss and Moonlight to Fairy.
+- Added seven Gen 6 Fairy moves: Fairy Wind, Moonblast, Play Rough,
+  Dazzling Gleam, Disarming Voice, Draining Kiss and Baby-Doll Eyes. Names
+  longer than the GBA's 12-character limit are abbreviated (DAZZLE GLEAM,
+  DISARM VOICE, DRAIN KISS, BABY-DOLL).
+- Added only the Gen 6 level-up and egg entries for those moves; no levels
+  are invented. Dazzling Gleam is present as data but currently unobtainable
+  because the fork does not add its Gen 6 TM. Light of Ruin (Eternal Flower
+  Floette's signature move) is intentionally not included.
+- Draining Kiss heals 50% of the damage dealt (Gen 3's absorb effect) rather
+  than Gen 6's 75%. Play Rough is physical only when the optional physical/
+  special split is enabled; under the default Gen 3 rules Fairy moves are
+  special.
+- Added the Fairy type label and icon, adapted from CFRU's
+  `Type_Icons.bmp`; see `NOTICE.md`.
+- English-only for now: the Spanish, French and Italian localization
+  manifests pin byte offsets and hashes of the patched sources, so they need
+  to be regenerated before those builds can include Fairy.
+
 ## 0.4.0 — 2026-10-16
 
 - The project is now called Emerald 3DS, by Zallax: new name on the HOME

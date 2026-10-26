@@ -4,6 +4,21 @@
 
 <h1 align="center">Emerald 3DS</h1>
 
+> **Unofficial Fairy fork.** This repository is `klx1204/emerald-3ds-fairy`,
+> based on [ZallaxDev/emerald-3ds](https://github.com/ZallaxDev/emerald-3ds)
+> 0.4.0. It adds the Fairy type, the Gen 6 Fairy retcons for the original 386
+> Pokémon, and seven Gen 6 Fairy moves. It is **English-only** and not
+> affiliated with or endorsed by Zallax.
+>
+> This fork is **non-commercial**: it includes a type icon adapted from
+> Complete-Fire-Red-Upgrade (CFRU), whose terms forbid selling the game or
+> soliciting donations for it. No donations are accepted for this fork.
+>
+> Download this fork from
+> [its GitHub Releases](https://github.com/klx1204/emerald-3ds-fairy/releases).
+> The upstream site (`emerald-3ds.com`) distributes the vanilla project, not
+> this fork.
+
 <p align="center">
   <strong>Rediscover Hoenn. Two screens. A new perspective.</strong><br>
   A native Nintendo 3DS port with a touch interface and an optional voxel overworld.
@@ -13,7 +28,6 @@
   <a href="https://emerald-3ds.com/"><img src="https://img.shields.io/badge/Play_now-Web_builder-168B67?style=for-the-badge&amp;logo=firefoxbrowser&amp;logoColor=white" alt="Generate the latest version in your browser"></a>
   <a href="https://x.com/DustZallax"><img src="https://img.shields.io/badge/Follow-%40DustZallax-18181B?style=for-the-badge&amp;logo=x&amp;logoColor=white" alt="Follow @DustZallax on X"></a>
   <a href="https://discord.com/invite/tfqHF8496P"><img src="https://img.shields.io/badge/Discord-Join_the_community-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Join the community on Discord"></a>
-  <a href="https://ko-fi.com/zallax"><img src="https://img.shields.io/badge/Ko--fi-Buy_me_a_coffee-FF5E5B?style=for-the-badge&amp;logo=kofi&amp;logoColor=white" alt="Buy Zallax a coffee on Ko-fi"></a>
 </p>
 
 ## Get the latest version — directly in your browser
@@ -95,6 +109,7 @@ interface on the bottom screen replaces the START menu. Enable the optional
 | **Optional day/night lighting** | Morning, daylight, sunset and night outdoors in 2D and voxel mode, lit windows and street lamps, and a clock that can run up to 120X. |
 | **Local wireless play** *(experimental)* | Union Room, trades, battles, Berry Blender, minigames and link contests between 3DS systems nearby. |
 | **Enhancements** | All optional: physical/special split, IVs and EVs on the summary, infinite TMs, running indoors, Repel prompt, visible wild Pokémon, faster speeds and more. |
+| **Fairy type** | This fork adds Gen 6's Fairy type, the 18 species retcons and seven Gen 6 Fairy moves, using official Gen 6 learnsets. |
 | **Built from your own cartridge** | The builder generates the game data locally from your own dump. No ROM content is distributed. |
 
 ### A new perspective on Hoenn
@@ -265,16 +280,12 @@ to stay in touch.
 
 ## Support the project
 
-If you're enjoying this new way to explore Hoenn, you can **buy me a coffee**
-on Ko-fi. It's an optional way to support my work on the project, and every
-coffee is appreciated. Thank you for being part of the adventure!
+This fork is **non-commercial**. Because it includes an asset adapted from
+CFRU, it does not accept donations. If you would like to support the
+upstream project, see [ZallaxDev/emerald-3ds](https://github.com/ZallaxDev/emerald-3ds).
 
-<p align="center">
-  <a href="https://ko-fi.com/zallax"><img src="https://img.shields.io/badge/Buy_me_a_coffee-Support_on_Ko--fi-FF5E5B?style=for-the-badge&amp;logo=kofi&amp;logoColor=white" alt="Buy Zallax a coffee — support on Ko-fi"></a>
-</p>
-
-You can also support the project by starring the repository, sharing it
-or [contributing](CONTRIBUTING.md).
+You can support this fork by starring the repository, sharing it or
+[contributing](CONTRIBUTING.md).
 
 ---
 

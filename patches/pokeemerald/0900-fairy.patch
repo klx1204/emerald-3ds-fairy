@@ -1,0 +1,1112 @@
+diff --git a/data/battle_anim_scripts.s b/data/battle_anim_scripts.s
+index ac24884..635f11d 100644
+--- a/data/battle_anim_scripts.s
++++ b/data/battle_anim_scripts.s
+@@ -371,6 +371,14 @@ gBattleAnims_Moves::
+ 	.int Move_WATER_PULSE
+ 	.int Move_DOOM_DESIRE
+ 	.int Move_PSYCHO_BOOST
++# Fairy moves
++	.int Move_GUST
++	.int Move_SWIFT
++	.int Move_SLAM
++	.int Move_FLASH
++	.int Move_GROWL
++	.int Move_ABSORB
++	.int Move_CHARM
+ 	.int Move_COUNT /* cannot be reached, because last move is Psycho Boost*/
+ 
+ 	.align 2
+diff --git a/graphics/interface/menu_info.png b/graphics/interface/menu_info.png
+index 031611a2a6c74783fd1fd6dfe93bade9dd3c4f91..ee20dbbcb30cb842dcc5af7d38c553d6cc6ebfa6 100644
+GIT binary patch
+delta 1928
+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
+O0000<MNUMnLSTYUp=;*=
+
+delta 1819
+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
+JPDHLkV1gRmOeX*U
+
+diff --git a/graphics/types/fairy.png b/graphics/types/fairy.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..609fbd345d9cb907707a965b39ee4040a3a9f596
+GIT binary patch
+literal 224
+zcmeAS@N?(olHy`uVBq!ia0vp^3P3Et!VDx^^%AmxltF+`h%1mjd-VUBDc_2t=44Iz
+zHs{{GtN-75SqA-&>i&Op%ao*~C5}t(HSe7=Wl3{&@&Et-cbFcu1?tK6ba4!+n6tLe
+zkgLH!faUn%-|b6IMjui0{U=z{T2|?`;bU%+vbx)aW5=E*>}*ZkKC{9rZa?dzJr#wE
+zz3(}5yPR6k8lko6?31(W*t~C9Z{Eiy$eZ?BKu=}zS-(}+PR)B4)w)1x>H>$)JHPPD
+YawUidc&*-X3TQ2Zr>mdKI;Vst0B;dsrvLx|
+
+literal 0
+HcmV?d00001
+
+diff --git a/graphics_file_rules.mk b/graphics_file_rules.mk
+index 05dfe5a..e078508 100644
+--- a/graphics_file_rules.mk
++++ b/graphics_file_rules.mk
+@@ -24,7 +24,7 @@ NAMINGGFXDIR := graphics/naming_screen
+ SPINDAGFXDIR := graphics/pokemon/spinda/spots
+ TITLESCREENGFXDIR := graphics/title_screen
+ 
+-types := normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark
++types := normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark fairy
+ contest_types := cool beauty cute smart tough
+ 
+ 
+diff --git a/include/constants/moves.h b/include/constants/moves.h
+index 324bfb8..e184d5f 100644
+--- a/include/constants/moves.h
++++ b/include/constants/moves.h
+@@ -357,7 +357,15 @@
+ #define MOVE_DOOM_DESIRE 353
+ #define MOVE_PSYCHO_BOOST 354
+ 
+-#define MOVES_COUNT 355
++#define MOVE_FAIRY_WIND 355
++#define MOVE_MOONBLAST 356
++#define MOVE_PLAY_ROUGH 357
++#define MOVE_DAZZLING_GLEAM 358
++#define MOVE_DISARMING_VOICE 359
++#define MOVE_DRAINING_KISS 360
++#define MOVE_BABY_DOLL_EYES 361
++
++#define MOVES_COUNT 362
+ 
+ // Used for checks for moves affected by Disable, Mimic, etc.
+ #define MOVE_UNAVAILABLE 0xFFFF
+diff --git a/include/constants/pokemon.h b/include/constants/pokemon.h
+index 0d6a20e..5f540f2 100644
+--- a/include/constants/pokemon.h
++++ b/include/constants/pokemon.h
+@@ -21,7 +21,8 @@
+ #define TYPE_ICE              15
+ #define TYPE_DRAGON           16
+ #define TYPE_DARK             17
+-#define NUMBER_OF_MON_TYPES   18
++#define TYPE_FAIRY            18
++#define NUMBER_OF_MON_TYPES   19
+ 
+ // Pokémon egg groups
+ #define EGG_GROUP_NONE                0
+diff --git a/src/battle_main.c b/src/battle_main.c
+index 915f419..80df091 100644
+--- a/src/battle_main.c
++++ b/src/battle_main.c
+@@ -445,6 +445,18 @@ const u8 gTypeEffectiveness[336] =
+     TYPE_STEEL, TYPE_ICE, TYPE_MUL_SUPER_EFFECTIVE,
+     TYPE_STEEL, TYPE_ROCK, TYPE_MUL_SUPER_EFFECTIVE,
+     TYPE_STEEL, TYPE_STEEL, TYPE_MUL_NOT_EFFECTIVE,
++    TYPE_FAIRY, TYPE_FIGHTING, TYPE_MUL_SUPER_EFFECTIVE,
++    TYPE_FAIRY, TYPE_DRAGON, TYPE_MUL_SUPER_EFFECTIVE,
++    TYPE_FAIRY, TYPE_DARK, TYPE_MUL_SUPER_EFFECTIVE,
++    TYPE_FAIRY, TYPE_FIRE, TYPE_MUL_NOT_EFFECTIVE,
++    TYPE_FAIRY, TYPE_POISON, TYPE_MUL_NOT_EFFECTIVE,
++    TYPE_FAIRY, TYPE_STEEL, TYPE_MUL_NOT_EFFECTIVE,
++    TYPE_FIGHTING, TYPE_FAIRY, TYPE_MUL_NOT_EFFECTIVE,
++    TYPE_BUG, TYPE_FAIRY, TYPE_MUL_NOT_EFFECTIVE,
++    TYPE_DARK, TYPE_FAIRY, TYPE_MUL_NOT_EFFECTIVE,
++    TYPE_DRAGON, TYPE_FAIRY, TYPE_MUL_NO_EFFECT,
++    TYPE_POISON, TYPE_FAIRY, TYPE_MUL_SUPER_EFFECTIVE,
++    TYPE_STEEL, TYPE_FAIRY, TYPE_MUL_SUPER_EFFECTIVE,
+     TYPE_FORESIGHT, TYPE_FORESIGHT, TYPE_MUL_NO_EFFECT,
+     TYPE_NORMAL, TYPE_GHOST, TYPE_MUL_NO_EFFECT,
+     TYPE_FIGHTING, TYPE_GHOST, TYPE_MUL_NO_EFFECT,
+@@ -471,6 +483,7 @@ const u8 gTypeNames[NUMBER_OF_MON_TYPES][TYPE_NAME_LENGTH + 1] =
+     [TYPE_ICE] = _("ICE"),
+     [TYPE_DRAGON] = _("DRAGON"),
+     [TYPE_DARK] = _("DARK"),
++    [TYPE_FAIRY] = _("FAIRY"),
+ };
+ 
+ // This is a factor in how much money you get for beating a trainer.
+diff --git a/src/battle_message.c b/src/battle_message.c
+index 64d7f69..570eda0 100644
+--- a/src/battle_message.c
++++ b/src/battle_message.c
+@@ -1361,7 +1361,8 @@ static const u8 sATypeMove_Table[NUMBER_OF_MON_TYPES][17] =
+     [TYPE_PSYCHIC]  = _("a PSYCHIC move"),
+     [TYPE_ICE]      = _("an ICE move"),
+     [TYPE_DRAGON]   = _("a DRAGON move"),
+-    [TYPE_DARK]     = _("a DARK move")
++    [TYPE_DARK]     = _("a DARK move"),
++    [TYPE_FAIRY] = _("a FAIRY move"),
+ };
+ 
+ const u8 gText_BattleTourney[] = _("BATTLE TOURNEY");
+diff --git a/src/data/battle_moves.h b/src/data/battle_moves.h
+index 8289212..1304bbb 100644
+--- a/src/data/battle_moves.h
++++ b/src/data/battle_moves.h
+@@ -2422,7 +2422,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
+     {
+         .effect = EFFECT_CONFUSE,
+         .power = 0,
+-        .type = TYPE_NORMAL,
++        .type = TYPE_FAIRY,
+         .accuracy = 75,
+         .pp = 10,
+         .secondaryEffectChance = 0,
+@@ -2656,7 +2656,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
+     {
+         .effect = EFFECT_ATTACK_DOWN_2,
+         .power = 0,
+-        .type = TYPE_NORMAL,
++        .type = TYPE_FAIRY,
+         .accuracy = 100,
+         .pp = 20,
+         .secondaryEffectChance = 0,
+@@ -3072,7 +3072,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
+     {
+         .effect = EFFECT_MOONLIGHT,
+         .power = 0,
+-        .type = TYPE_NORMAL,
++        .type = TYPE_FAIRY,
+         .accuracy = 0,
+         .pp = 5,
+         .secondaryEffectChance = 0,
+@@ -4614,4 +4614,95 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
+         .priority = 0,
+         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+     },
++    [MOVE_FAIRY_WIND] =
++    {
++        .effect = EFFECT_HIT,
++        .power = 40,
++        .type = TYPE_FAIRY,
++        .accuracy = 100,
++        .pp = 30,
++        .secondaryEffectChance = 0,
++        .target = MOVE_TARGET_SELECTED,
++        .priority = 0,
++        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
++    },
++
++    [MOVE_MOONBLAST] =
++    {
++        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
++        .power = 95,
++        .type = TYPE_FAIRY,
++        .accuracy = 100,
++        .pp = 15,
++        .secondaryEffectChance = 30,
++        .target = MOVE_TARGET_SELECTED,
++        .priority = 0,
++        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
++    },
++
++    [MOVE_PLAY_ROUGH] =
++    {
++        .effect = EFFECT_ATTACK_DOWN_HIT,
++        .power = 90,
++        .type = TYPE_FAIRY,
++        .accuracy = 90,
++        .pp = 10,
++        .secondaryEffectChance = 10,
++        .target = MOVE_TARGET_SELECTED,
++        .priority = 0,
++        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
++    },
++
++    [MOVE_DAZZLING_GLEAM] =
++    {
++        .effect = EFFECT_HIT,
++        .power = 80,
++        .type = TYPE_FAIRY,
++        .accuracy = 100,
++        .pp = 10,
++        .secondaryEffectChance = 0,
++        .target = MOVE_TARGET_BOTH,
++        .priority = 0,
++        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
++    },
++
++    [MOVE_DISARMING_VOICE] =
++    {
++        .effect = EFFECT_ALWAYS_HIT,
++        .power = 40,
++        .type = TYPE_FAIRY,
++        .accuracy = 0,
++        .pp = 15,
++        .secondaryEffectChance = 0,
++        .target = MOVE_TARGET_BOTH,
++        .priority = 0,
++        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
++    },
++
++    [MOVE_DRAINING_KISS] =
++    {
++        .effect = EFFECT_ABSORB,
++        .power = 50,
++        .type = TYPE_FAIRY,
++        .accuracy = 100,
++        .pp = 10,
++        .secondaryEffectChance = 0,
++        .target = MOVE_TARGET_SELECTED,
++        .priority = 0,
++        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
++    },
++
++    [MOVE_BABY_DOLL_EYES] =
++    {
++        .effect = EFFECT_ATTACK_DOWN,
++        .power = 0,
++        .type = TYPE_FAIRY,
++        .accuracy = 100,
++        .pp = 30,
++        .secondaryEffectChance = 0,
++        .target = MOVE_TARGET_SELECTED,
++        .priority = 1,
++        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
++    },
++
+ };
+diff --git a/src/data/contest_moves.h b/src/data/contest_moves.h
+index 6585282..8b8a094 100644
+--- a/src/data/contest_moves.h
++++ b/src/data/contest_moves.h
+@@ -2832,6 +2832,63 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
+         .comboStarterId = 0,
+         .comboMoves = {COMBO_STARTER_CALM_MIND},
+     },
++    [MOVE_FAIRY_WIND] =
++    {
++        .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
++        .contestCategory = CONTEST_CATEGORY_BEAUTY,
++        .comboStarterId = 0,
++        .comboMoves = {0},
++    },
++
++    [MOVE_MOONBLAST] =
++    {
++        .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
++        .contestCategory = CONTEST_CATEGORY_CUTE,
++        .comboStarterId = 0,
++        .comboMoves = {0},
++    },
++
++    [MOVE_PLAY_ROUGH] =
++    {
++        .effect = CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
++        .contestCategory = CONTEST_CATEGORY_TOUGH,
++        .comboStarterId = 0,
++        .comboMoves = {0},
++    },
++
++    [MOVE_DAZZLING_GLEAM] =
++    {
++        .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
++        .contestCategory = CONTEST_CATEGORY_BEAUTY,
++        .comboStarterId = 0,
++        .comboMoves = {0},
++    },
++
++    [MOVE_DISARMING_VOICE] =
++    {
++        .effect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
++        .contestCategory = CONTEST_CATEGORY_CUTE,
++        .comboStarterId = 0,
++        .comboMoves = {0},
++    },
++
++    [MOVE_DRAINING_KISS] =
++    {
++        .effect = CONTEST_EFFECT_HIGHLY_APPEALING,
++        .contestCategory = CONTEST_CATEGORY_CUTE,
++        .comboStarterId = 0,
++        .comboMoves = {0},
++    },
++
++    [MOVE_BABY_DOLL_EYES] =
++    {
++        .effect = CONTEST_EFFECT_BETTER_IF_LAST,
++        .contestCategory = CONTEST_CATEGORY_CUTE,
++        .comboStarterId = 0,
++        .comboMoves = {0},
++    },
++
++
+ };
+ 
+ const struct ContestEffect gContestEffects[] =
+diff --git a/src/data/move_categories.h b/src/data/move_categories.h
+index b48a7f3..5e04c75 100644
+--- a/src/data/move_categories.h
++++ b/src/data/move_categories.h
+@@ -358,4 +358,11 @@ const u8 gMoveCategories[MOVES_COUNT] =
+     [MOVE_WATER_PULSE] = MOVE_CATEGORY_SPECIAL,
+     [MOVE_DOOM_DESIRE] = MOVE_CATEGORY_SPECIAL,
+     [MOVE_PSYCHO_BOOST] = MOVE_CATEGORY_SPECIAL,
++    [MOVE_FAIRY_WIND] = MOVE_CATEGORY_SPECIAL,
++    [MOVE_MOONBLAST] = MOVE_CATEGORY_SPECIAL,
++    [MOVE_PLAY_ROUGH] = MOVE_CATEGORY_PHYSICAL,
++    [MOVE_DAZZLING_GLEAM] = MOVE_CATEGORY_SPECIAL,
++    [MOVE_DISARMING_VOICE] = MOVE_CATEGORY_SPECIAL,
++    [MOVE_DRAINING_KISS] = MOVE_CATEGORY_SPECIAL,
++    [MOVE_BABY_DOLL_EYES] = MOVE_CATEGORY_STATUS,
+ };
+diff --git a/src/data/pokemon/egg_moves.h b/src/data/pokemon/egg_moves.h
+index f8c250c..40c9cab 100644
+--- a/src/data/pokemon/egg_moves.h
++++ b/src/data/pokemon/egg_moves.h
+@@ -570,7 +570,8 @@ const u16 gEggMoves[] = {
+               MOVE_ENCORE,
+               MOVE_DOUBLE_SLAP,
+               MOVE_WISH,
+-              MOVE_CHARGE),
++              MOVE_CHARGE,
++              MOVE_DISARMING_VOICE),
+ 
+     egg_moves(CLEFFA,
+               MOVE_PRESENT,
+@@ -767,7 +768,8 @@ const u16 gEggMoves[] = {
+               MOVE_METAL_CLAW,
+               MOVE_FAKE_TEARS,
+               MOVE_YAWN,
+-              MOVE_SLEEP_TALK),
++              MOVE_SLEEP_TALK,
++              MOVE_PLAY_ROUGH),
+ 
+     egg_moves(SLUGMA,
+               MOVE_ACID_ARMOR,
+@@ -841,7 +843,8 @@ const u16 gEggMoves[] = {
+               MOVE_ANCIENT_POWER,
+               MOVE_SNORE,
+               MOVE_COUNTER,
+-              MOVE_FISSURE),
++              MOVE_FISSURE,
++              MOVE_PLAY_ROUGH),
+ 
+     egg_moves(STANTLER,
+               MOVE_SPITE,
+@@ -930,7 +933,8 @@ const u16 gEggMoves[] = {
+               MOVE_POISON_FANG,
+               MOVE_COVET,
+               MOVE_LEER,
+-              MOVE_YAWN),
++              MOVE_YAWN,
++              MOVE_PLAY_ROUGH),
+ 
+     egg_moves(ZIGZAGOON,
+               MOVE_CHARM,
+@@ -1207,7 +1211,8 @@ const u16 gEggMoves[] = {
+               MOVE_SNORE,
+               MOVE_SWAGGER,
+               MOVE_EXTRASENSORY,
+-              MOVE_SMELLING_SALT),
++              MOVE_SMELLING_SALT,
++              MOVE_DISARMING_VOICE),
+ 
+     egg_moves(CLAMPERL,
+               MOVE_REFRESH,
+@@ -1223,7 +1228,8 @@ const u16 gEggMoves[] = {
+               MOVE_DOUBLE_EDGE,
+               MOVE_MAGIC_COAT,
+               MOVE_CURSE,
+-              MOVE_SUBSTITUTE),
++              MOVE_SUBSTITUTE,
++              MOVE_PLAY_ROUGH),
+ 
+     egg_moves(SHUPPET,
+               MOVE_DISABLE,
+diff --git a/src/data/pokemon/level_up_learnsets.h b/src/data/pokemon/level_up_learnsets.h
+index 212b969..8d5e5a5 100644
+--- a/src/data/pokemon/level_up_learnsets.h
++++ b/src/data/pokemon/level_up_learnsets.h
+@@ -454,6 +454,7 @@ static const u16 sNidokingLevelUpLearnset[] = {
+ static const u16 sClefairyLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_POUND),
+     LEVEL_UP_MOVE( 1, MOVE_GROWL),
++    LEVEL_UP_MOVE( 1, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE( 5, MOVE_ENCORE),
+     LEVEL_UP_MOVE( 9, MOVE_SING),
+     LEVEL_UP_MOVE(13, MOVE_DOUBLE_SLAP),
+@@ -465,6 +466,7 @@ static const u16 sClefairyLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(37, MOVE_MOONLIGHT),
+     LEVEL_UP_MOVE(41, MOVE_LIGHT_SCREEN),
+     LEVEL_UP_MOVE(45, MOVE_METEOR_MASH),
++    LEVEL_UP_MOVE(46, MOVE_MOONBLAST),
+     LEVEL_UP_END
+ };
+ 
+@@ -473,6 +475,7 @@ static const u16 sClefableLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_DOUBLE_SLAP),
+     LEVEL_UP_MOVE( 1, MOVE_MINIMIZE),
+     LEVEL_UP_MOVE( 1, MOVE_METRONOME),
++    LEVEL_UP_MOVE( 1, MOVE_DISARMING_VOICE),
+     LEVEL_UP_END
+ };
+ 
+@@ -480,6 +483,7 @@ static const u16 sVulpixLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_EMBER),
+     LEVEL_UP_MOVE( 5, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE( 9, MOVE_ROAR),
++    LEVEL_UP_MOVE( 9, MOVE_BABY_DOLL_EYES),
+     LEVEL_UP_MOVE(13, MOVE_QUICK_ATTACK),
+     LEVEL_UP_MOVE(17, MOVE_WILL_O_WISP),
+     LEVEL_UP_MOVE(21, MOVE_CONFUSE_RAY),
+@@ -504,6 +508,7 @@ static const u16 sJigglypuffLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_SING),
+     LEVEL_UP_MOVE( 4, MOVE_DEFENSE_CURL),
+     LEVEL_UP_MOVE( 9, MOVE_POUND),
++    LEVEL_UP_MOVE(11, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE(14, MOVE_DISABLE),
+     LEVEL_UP_MOVE(19, MOVE_ROLLOUT),
+     LEVEL_UP_MOVE(24, MOVE_DOUBLE_SLAP),
+@@ -520,6 +525,7 @@ static const u16 sWigglytuffLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_DISABLE),
+     LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
+     LEVEL_UP_MOVE( 1, MOVE_DOUBLE_SLAP),
++    LEVEL_UP_MOVE( 1, MOVE_PLAY_ROUGH),
+     LEVEL_UP_END
+ };
+ 
+@@ -563,6 +569,7 @@ static const u16 sOddishLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(23, MOVE_ACID),
+     LEVEL_UP_MOVE(32, MOVE_MOONLIGHT),
+     LEVEL_UP_MOVE(39, MOVE_PETAL_DANCE),
++    LEVEL_UP_MOVE(43, MOVE_MOONBLAST),
+     LEVEL_UP_END
+ };
+ 
+@@ -696,6 +703,7 @@ static const u16 sPersianLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
+     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+     LEVEL_UP_MOVE( 1, MOVE_BITE),
++    LEVEL_UP_MOVE( 1, MOVE_PLAY_ROUGH),
+     LEVEL_UP_MOVE(11, MOVE_BITE),
+     LEVEL_UP_MOVE(20, MOVE_PAY_DAY),
+     LEVEL_UP_MOVE(29, MOVE_FAINT_ATTACK),
+@@ -1720,6 +1728,7 @@ static const u16 sJynxLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_LICK),
+     LEVEL_UP_MOVE( 1, MOVE_LOVELY_KISS),
+     LEVEL_UP_MOVE( 1, MOVE_POWDER_SNOW),
++    LEVEL_UP_MOVE( 1, MOVE_DRAINING_KISS),
+     LEVEL_UP_MOVE( 9, MOVE_LOVELY_KISS),
+     LEVEL_UP_MOVE(13, MOVE_POWDER_SNOW),
+     LEVEL_UP_MOVE(21, MOVE_DOUBLE_SLAP),
+@@ -1834,6 +1843,7 @@ static const u16 sEeveeLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE( 1, MOVE_HELPING_HAND),
+     LEVEL_UP_MOVE( 8, MOVE_SAND_ATTACK),
++    LEVEL_UP_MOVE( 9, MOVE_BABY_DOLL_EYES),
+     LEVEL_UP_MOVE(16, MOVE_GROWL),
+     LEVEL_UP_MOVE(23, MOVE_QUICK_ATTACK),
+     LEVEL_UP_MOVE(30, MOVE_BITE),
+@@ -2436,6 +2446,7 @@ static const u16 sTogeticLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_CHARM),
+     LEVEL_UP_MOVE( 6, MOVE_METRONOME),
+     LEVEL_UP_MOVE(11, MOVE_SWEET_KISS),
++    LEVEL_UP_MOVE(14, MOVE_FAIRY_WIND),
+     LEVEL_UP_MOVE(16, MOVE_YAWN),
+     LEVEL_UP_MOVE(21, MOVE_ENCORE),
+     LEVEL_UP_MOVE(26, MOVE_FOLLOW_ME),
+@@ -2523,6 +2534,7 @@ static const u16 sMarillLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(10, MOVE_WATER_GUN),
+     LEVEL_UP_MOVE(15, MOVE_ROLLOUT),
+     LEVEL_UP_MOVE(21, MOVE_BUBBLE_BEAM),
++    LEVEL_UP_MOVE(23, MOVE_PLAY_ROUGH),
+     LEVEL_UP_MOVE(28, MOVE_DOUBLE_EDGE),
+     LEVEL_UP_MOVE(36, MOVE_RAIN_DANCE),
+     LEVEL_UP_MOVE(45, MOVE_HYDRO_PUMP),
+@@ -2539,6 +2551,7 @@ static const u16 sAzumarillLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(10, MOVE_WATER_GUN),
+     LEVEL_UP_MOVE(15, MOVE_ROLLOUT),
+     LEVEL_UP_MOVE(24, MOVE_BUBBLE_BEAM),
++    LEVEL_UP_MOVE(25, MOVE_PLAY_ROUGH),
+     LEVEL_UP_MOVE(34, MOVE_DOUBLE_EDGE),
+     LEVEL_UP_MOVE(45, MOVE_RAIN_DANCE),
+     LEVEL_UP_MOVE(57, MOVE_HYDRO_PUMP),
+@@ -2573,6 +2586,7 @@ static const u16 sHoppipLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 5, MOVE_SYNTHESIS),
+     LEVEL_UP_MOVE( 5, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE(10, MOVE_TACKLE),
++    LEVEL_UP_MOVE(10, MOVE_FAIRY_WIND),
+     LEVEL_UP_MOVE(13, MOVE_POISON_POWDER),
+     LEVEL_UP_MOVE(15, MOVE_STUN_SPORE),
+     LEVEL_UP_MOVE(17, MOVE_SLEEP_POWDER),
+@@ -2590,6 +2604,7 @@ static const u16 sSkiploomLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 5, MOVE_SYNTHESIS),
+     LEVEL_UP_MOVE( 5, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE(10, MOVE_TACKLE),
++    LEVEL_UP_MOVE(10, MOVE_FAIRY_WIND),
+     LEVEL_UP_MOVE(13, MOVE_POISON_POWDER),
+     LEVEL_UP_MOVE(15, MOVE_STUN_SPORE),
+     LEVEL_UP_MOVE(17, MOVE_SLEEP_POWDER),
+@@ -2607,6 +2622,7 @@ static const u16 sJumpluffLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 5, MOVE_SYNTHESIS),
+     LEVEL_UP_MOVE( 5, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE(10, MOVE_TACKLE),
++    LEVEL_UP_MOVE(10, MOVE_FAIRY_WIND),
+     LEVEL_UP_MOVE(13, MOVE_POISON_POWDER),
+     LEVEL_UP_MOVE(15, MOVE_STUN_SPORE),
+     LEVEL_UP_MOVE(17, MOVE_SLEEP_POWDER),
+@@ -2870,6 +2886,7 @@ static const u16 sSnubbullLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(19, MOVE_LICK),
+     LEVEL_UP_MOVE(26, MOVE_ROAR),
+     LEVEL_UP_MOVE(34, MOVE_RAGE),
++    LEVEL_UP_MOVE(37, MOVE_PLAY_ROUGH),
+     LEVEL_UP_MOVE(43, MOVE_TAKE_DOWN),
+     LEVEL_UP_MOVE(53, MOVE_CRUNCH),
+     LEVEL_UP_END
+@@ -2884,6 +2901,7 @@ static const u16 sGranbullLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(19, MOVE_LICK),
+     LEVEL_UP_MOVE(28, MOVE_ROAR),
+     LEVEL_UP_MOVE(38, MOVE_RAGE),
++    LEVEL_UP_MOVE(43, MOVE_PLAY_ROUGH),
+     LEVEL_UP_MOVE(49, MOVE_TAKE_DOWN),
+     LEVEL_UP_MOVE(61, MOVE_CRUNCH),
+     LEVEL_UP_END
+@@ -2961,6 +2979,7 @@ static const u16 sSneaselLevelUpLearnset[] = {
+ static const u16 sTeddiursaLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
+     LEVEL_UP_MOVE( 1, MOVE_LEER),
++    LEVEL_UP_MOVE( 1, MOVE_BABY_DOLL_EYES),
+     LEVEL_UP_MOVE( 7, MOVE_LICK),
+     LEVEL_UP_MOVE(13, MOVE_FURY_SWIPES),
+     LEVEL_UP_MOVE(19, MOVE_FAKE_TEARS),
+@@ -3767,6 +3786,7 @@ static const u16 sZigzagoonLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+     LEVEL_UP_MOVE( 5, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE( 9, MOVE_HEADBUTT),
++    LEVEL_UP_MOVE(11, MOVE_BABY_DOLL_EYES),
+     LEVEL_UP_MOVE(13, MOVE_SAND_ATTACK),
+     LEVEL_UP_MOVE(17, MOVE_ODOR_SLEUTH),
+     LEVEL_UP_MOVE(21, MOVE_MUD_SPORT),
+@@ -3783,6 +3803,7 @@ static const u16 sLinooneLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+     LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE( 1, MOVE_HEADBUTT),
++    LEVEL_UP_MOVE( 1, MOVE_PLAY_ROUGH),
+     LEVEL_UP_MOVE( 5, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE( 9, MOVE_HEADBUTT),
+     LEVEL_UP_MOVE(13, MOVE_SAND_ATTACK),
+@@ -4129,6 +4150,7 @@ static const u16 sSkittyLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 3, MOVE_TAIL_WHIP),
+     LEVEL_UP_MOVE( 7, MOVE_ATTRACT),
+     LEVEL_UP_MOVE(13, MOVE_SING),
++    LEVEL_UP_MOVE(13, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE(15, MOVE_DOUBLE_SLAP),
+     LEVEL_UP_MOVE(19, MOVE_ASSIST),
+     LEVEL_UP_MOVE(25, MOVE_CHARM),
+@@ -4136,6 +4158,7 @@ static const u16 sSkittyLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(31, MOVE_COVET),
+     LEVEL_UP_MOVE(37, MOVE_HEAL_BELL),
+     LEVEL_UP_MOVE(39, MOVE_DOUBLE_EDGE),
++    LEVEL_UP_MOVE(46, MOVE_PLAY_ROUGH),
+     LEVEL_UP_END
+ };
+ 
+@@ -4281,6 +4304,7 @@ static const u16 sWhiscashLevelUpLearnset[] = {
+ static const u16 sLuvdiscLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+     LEVEL_UP_MOVE( 4, MOVE_CHARM),
++    LEVEL_UP_MOVE( 9, MOVE_DRAINING_KISS),
+     LEVEL_UP_MOVE(12, MOVE_WATER_GUN),
+     LEVEL_UP_MOVE(16, MOVE_AGILITY),
+     LEVEL_UP_MOVE(24, MOVE_TAKE_DOWN),
+@@ -4335,6 +4359,7 @@ static const u16 sMiloticLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
+     LEVEL_UP_MOVE( 5, MOVE_WRAP),
+     LEVEL_UP_MOVE(10, MOVE_WATER_SPORT),
++    LEVEL_UP_MOVE(11, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE(15, MOVE_REFRESH),
+     LEVEL_UP_MOVE(20, MOVE_WATER_PULSE),
+     LEVEL_UP_MOVE(25, MOVE_TWISTER),
+@@ -4644,6 +4669,7 @@ static const u16 sGlalieLevelUpLearnset[] = {
+ static const u16 sLunatoneLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+     LEVEL_UP_MOVE( 1, MOVE_HARDEN),
++    LEVEL_UP_MOVE( 1, MOVE_MOONBLAST),
+     LEVEL_UP_MOVE( 7, MOVE_CONFUSION),
+     LEVEL_UP_MOVE(13, MOVE_ROCK_THROW),
+     LEVEL_UP_MOVE(19, MOVE_HYPNOSIS),
+@@ -4744,6 +4770,8 @@ static const u16 sMinunLevelUpLearnset[] = {
+ 
+ static const u16 sMawileLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
++    LEVEL_UP_MOVE( 1, MOVE_FAIRY_WIND),
++    LEVEL_UP_MOVE( 1, MOVE_PLAY_ROUGH),
+     LEVEL_UP_MOVE( 6, MOVE_FAKE_TEARS),
+     LEVEL_UP_MOVE(11, MOVE_BITE),
+     LEVEL_UP_MOVE(16, MOVE_SWEET_SCENT),
+@@ -4799,12 +4827,14 @@ static const u16 sSwabluLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+     LEVEL_UP_MOVE( 8, MOVE_ASTONISH),
+     LEVEL_UP_MOVE(11, MOVE_SING),
++    LEVEL_UP_MOVE(11, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE(18, MOVE_FURY_ATTACK),
+     LEVEL_UP_MOVE(21, MOVE_SAFEGUARD),
+     LEVEL_UP_MOVE(28, MOVE_MIST),
+     LEVEL_UP_MOVE(31, MOVE_TAKE_DOWN),
+     LEVEL_UP_MOVE(38, MOVE_MIRROR_MOVE),
+     LEVEL_UP_MOVE(41, MOVE_REFRESH),
++    LEVEL_UP_MOVE(46, MOVE_MOONBLAST),
+     LEVEL_UP_MOVE(48, MOVE_PERISH_SONG),
+     LEVEL_UP_END
+ };
+@@ -4816,6 +4846,7 @@ static const u16 sAltariaLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_SING),
+     LEVEL_UP_MOVE( 8, MOVE_ASTONISH),
+     LEVEL_UP_MOVE(11, MOVE_SING),
++    LEVEL_UP_MOVE(11, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE(18, MOVE_FURY_ATTACK),
+     LEVEL_UP_MOVE(21, MOVE_SAFEGUARD),
+     LEVEL_UP_MOVE(28, MOVE_MIST),
+@@ -4823,6 +4854,7 @@ static const u16 sAltariaLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(35, MOVE_DRAGON_BREATH),
+     LEVEL_UP_MOVE(40, MOVE_DRAGON_DANCE),
+     LEVEL_UP_MOVE(45, MOVE_REFRESH),
++    LEVEL_UP_MOVE(52, MOVE_MOONBLAST),
+     LEVEL_UP_MOVE(54, MOVE_PERISH_SONG),
+     LEVEL_UP_MOVE(59, MOVE_SKY_ATTACK),
+     LEVEL_UP_END
+@@ -4900,6 +4932,7 @@ static const u16 sSlakothLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(25, MOVE_AMNESIA),
+     LEVEL_UP_MOVE(31, MOVE_COVET),
+     LEVEL_UP_MOVE(37, MOVE_COUNTER),
++    LEVEL_UP_MOVE(38, MOVE_PLAY_ROUGH),
+     LEVEL_UP_MOVE(43, MOVE_FLAIL),
+     LEVEL_UP_END
+ };
+@@ -5060,6 +5093,7 @@ static const u16 sHuntailLevelUpLearnset[] = {
+ static const u16 sGorebyssLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_WHIRLPOOL),
+     LEVEL_UP_MOVE( 8, MOVE_CONFUSION),
++    LEVEL_UP_MOVE(11, MOVE_DRAINING_KISS),
+     LEVEL_UP_MOVE(15, MOVE_AGILITY),
+     LEVEL_UP_MOVE(22, MOVE_WATER_PULSE),
+     LEVEL_UP_MOVE(29, MOVE_AMNESIA),
+@@ -5236,6 +5270,7 @@ static const u16 sVolbeatLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(29, MOVE_PROTECT),
+     LEVEL_UP_MOVE(33, MOVE_HELPING_HAND),
+     LEVEL_UP_MOVE(37, MOVE_DOUBLE_EDGE),
++    LEVEL_UP_MOVE(43, MOVE_PLAY_ROUGH),
+     LEVEL_UP_END
+ };
+ 
+@@ -5250,6 +5285,7 @@ static const u16 sIllumiseLevelUpLearnset[] = {
+     LEVEL_UP_MOVE(29, MOVE_FLATTER),
+     LEVEL_UP_MOVE(33, MOVE_HELPING_HAND),
+     LEVEL_UP_MOVE(37, MOVE_COVET),
++    LEVEL_UP_MOVE(43, MOVE_PLAY_ROUGH),
+     LEVEL_UP_END
+ };
+ 
+@@ -5319,8 +5355,10 @@ static const u16 sRaltsLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+     LEVEL_UP_MOVE( 6, MOVE_CONFUSION),
+     LEVEL_UP_MOVE(11, MOVE_DOUBLE_TEAM),
++    LEVEL_UP_MOVE(11, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE(16, MOVE_TELEPORT),
+     LEVEL_UP_MOVE(21, MOVE_CALM_MIND),
++    LEVEL_UP_MOVE(22, MOVE_DRAINING_KISS),
+     LEVEL_UP_MOVE(26, MOVE_PSYCHIC),
+     LEVEL_UP_MOVE(31, MOVE_IMPRISON),
+     LEVEL_UP_MOVE(36, MOVE_FUTURE_SIGHT),
+@@ -5336,8 +5374,10 @@ static const u16 sKirliaLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_TELEPORT),
+     LEVEL_UP_MOVE( 6, MOVE_CONFUSION),
+     LEVEL_UP_MOVE(11, MOVE_DOUBLE_TEAM),
++    LEVEL_UP_MOVE(11, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE(16, MOVE_TELEPORT),
+     LEVEL_UP_MOVE(21, MOVE_CALM_MIND),
++    LEVEL_UP_MOVE(23, MOVE_DRAINING_KISS),
+     LEVEL_UP_MOVE(26, MOVE_PSYCHIC),
+     LEVEL_UP_MOVE(33, MOVE_IMPRISON),
+     LEVEL_UP_MOVE(40, MOVE_FUTURE_SIGHT),
+@@ -5351,10 +5391,13 @@ static const u16 sGardevoirLevelUpLearnset[] = {
+     LEVEL_UP_MOVE( 1, MOVE_CONFUSION),
+     LEVEL_UP_MOVE( 1, MOVE_DOUBLE_TEAM),
+     LEVEL_UP_MOVE( 1, MOVE_TELEPORT),
++    LEVEL_UP_MOVE( 1, MOVE_MOONBLAST),
+     LEVEL_UP_MOVE( 6, MOVE_CONFUSION),
+     LEVEL_UP_MOVE(11, MOVE_DOUBLE_TEAM),
++    LEVEL_UP_MOVE(11, MOVE_DISARMING_VOICE),
+     LEVEL_UP_MOVE(16, MOVE_TELEPORT),
+     LEVEL_UP_MOVE(21, MOVE_CALM_MIND),
++    LEVEL_UP_MOVE(23, MOVE_DRAINING_KISS),
+     LEVEL_UP_MOVE(26, MOVE_PSYCHIC),
+     LEVEL_UP_MOVE(33, MOVE_IMPRISON),
+     LEVEL_UP_MOVE(42, MOVE_FUTURE_SIGHT),
+diff --git a/src/data/pokemon/species_info.h b/src/data/pokemon/species_info.h
+index fbd3bcb..58a1ee2 100644
+--- a/src/data/pokemon/species_info.h
++++ b/src/data/pokemon/species_info.h
+@@ -1064,7 +1064,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 35,
+         .baseSpAttack  = 60,
+         .baseSpDefense = 65,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_FAIRY, TYPE_FAIRY},
+         .catchRate = 150,
+         .expYield = 68,
+         .evYield_HP        = 2,
+@@ -1094,7 +1094,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 60,
+         .baseSpAttack  = 85,
+         .baseSpDefense = 90,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_FAIRY, TYPE_FAIRY},
+         .catchRate = 25,
+         .expYield = 129,
+         .evYield_HP        = 3,
+@@ -1184,7 +1184,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 20,
+         .baseSpAttack  = 45,
+         .baseSpDefense = 25,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_NORMAL, TYPE_FAIRY},
+         .catchRate = 170,
+         .expYield = 76,
+         .evYield_HP        = 2,
+@@ -1214,7 +1214,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 45,
+         .baseSpAttack  = 75,
+         .baseSpDefense = 50,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_NORMAL, TYPE_FAIRY},
+         .catchRate = 50,
+         .expYield = 109,
+         .evYield_HP        = 3,
+@@ -3674,7 +3674,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 90,
+         .baseSpAttack  = 100,
+         .baseSpDefense = 120,
+-        .types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
++        .types = {TYPE_PSYCHIC, TYPE_FAIRY},
+         .catchRate = 45,
+         .expYield = 136,
+         .evYield_HP        = 0,
+@@ -5204,7 +5204,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 15,
+         .baseSpAttack  = 45,
+         .baseSpDefense = 55,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_FAIRY, TYPE_FAIRY},
+         .catchRate = 150,
+         .expYield = 37,
+         .evYield_HP        = 0,
+@@ -5234,7 +5234,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 15,
+         .baseSpAttack  = 40,
+         .baseSpDefense = 20,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_NORMAL, TYPE_FAIRY},
+         .catchRate = 170,
+         .expYield = 39,
+         .evYield_HP        = 1,
+@@ -5264,7 +5264,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 20,
+         .baseSpAttack  = 40,
+         .baseSpDefense = 65,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_FAIRY, TYPE_FAIRY},
+         .catchRate = 190,
+         .expYield = 74,
+         .evYield_HP        = 0,
+@@ -5294,7 +5294,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 40,
+         .baseSpAttack  = 80,
+         .baseSpDefense = 105,
+-        .types = { TYPE_NORMAL, TYPE_FLYING },
++        .types = {TYPE_FAIRY, TYPE_FLYING},
+         .catchRate = 75,
+         .expYield = 114,
+         .evYield_HP        = 0,
+@@ -5504,7 +5504,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 40,
+         .baseSpAttack  = 20,
+         .baseSpDefense = 50,
+-        .types = { TYPE_WATER, TYPE_WATER },
++        .types = {TYPE_WATER, TYPE_FAIRY},
+         .catchRate = 190,
+         .expYield = 58,
+         .evYield_HP        = 2,
+@@ -5534,7 +5534,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 50,
+         .baseSpAttack  = 50,
+         .baseSpDefense = 80,
+-        .types = { TYPE_WATER, TYPE_WATER },
++        .types = {TYPE_WATER, TYPE_FAIRY},
+         .catchRate = 75,
+         .expYield = 153,
+         .evYield_HP        = 3,
+@@ -6284,7 +6284,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 30,
+         .baseSpAttack  = 40,
+         .baseSpDefense = 40,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_FAIRY, TYPE_FAIRY},
+         .catchRate = 190,
+         .expYield = 63,
+         .evYield_HP        = 0,
+@@ -6314,7 +6314,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 45,
+         .baseSpAttack  = 60,
+         .baseSpDefense = 60,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_FAIRY, TYPE_FAIRY},
+         .catchRate = 75,
+         .expYield = 178,
+         .evYield_HP        = 0,
+@@ -9814,7 +9814,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 20,
+         .baseSpAttack  = 20,
+         .baseSpDefense = 40,
+-        .types = { TYPE_NORMAL, TYPE_NORMAL },
++        .types = {TYPE_NORMAL, TYPE_FAIRY},
+         .catchRate = 150,
+         .expYield = 33,
+         .evYield_HP        = 1,
+@@ -9964,7 +9964,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 50,
+         .baseSpAttack  = 55,
+         .baseSpDefense = 55,
+-        .types = { TYPE_STEEL, TYPE_STEEL },
++        .types = {TYPE_STEEL, TYPE_FAIRY},
+         .catchRate = 45,
+         .expYield = 98,
+         .evYield_HP        = 0,
+@@ -11074,7 +11074,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 40,
+         .baseSpAttack  = 45,
+         .baseSpDefense = 35,
+-        .types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
++        .types = {TYPE_PSYCHIC, TYPE_FAIRY},
+         .catchRate = 235,
+         .expYield = 70,
+         .evYield_HP        = 0,
+@@ -11104,7 +11104,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 50,
+         .baseSpAttack  = 65,
+         .baseSpDefense = 55,
+-        .types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
++        .types = {TYPE_PSYCHIC, TYPE_FAIRY},
+         .catchRate = 120,
+         .expYield = 140,
+         .evYield_HP        = 0,
+@@ -11134,7 +11134,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
+         .baseSpeed     = 80,
+         .baseSpAttack  = 125,
+         .baseSpDefense = 115,
+-        .types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
++        .types = {TYPE_PSYCHIC, TYPE_FAIRY},
+         .catchRate = 45,
+         .expYield = 208,
+         .evYield_HP        = 0,
+diff --git a/src/data/text/move_descriptions.h b/src/data/text/move_descriptions.h
+index 34880f1..a9085a4 100644
+--- a/src/data/text/move_descriptions.h
++++ b/src/data/text/move_descriptions.h
+@@ -1418,6 +1418,27 @@ static const u8 sPsychoBoostDescription[] = _(
+     "but sharply lowers SP. ATK.");
+ 
+ // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
++static const u8 sFairyWindDescription[] = _(
++    "A gust of fairy wind\nthat strikes the foe.");
++
++static const u8 sMoonblastDescription[] = _(
++    "Borrows the moon's power.\nMay lower Sp. Atk.");
++
++static const u8 sPlayRoughDescription[] = _(
++    "Plays rough with the foe.\nMay lower Attack.");
++
++static const u8 sDazzlingGleamDescription[] = _(
++    "Dazzles the foe with a\npowerful flash of light.");
++
++static const u8 sDisarmingVoiceDescription[] = _(
++    "A charming cry that\nnever misses.");
++
++static const u8 sDrainingKissDescription[] = _(
++    "Steals the foe's HP with\na kiss. Restores own HP.");
++
++static const u8 sBabyDollEyesDescription[] = _(
++    "Lowers the foe's Attack\nwith cute eyes. Goes first.");
++
+ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
+ {
+     [MOVE_POUND - 1] = sPoundDescription,
+@@ -1774,4 +1795,11 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
+     [MOVE_WATER_PULSE - 1] = sWaterPulseDescription,
+     [MOVE_DOOM_DESIRE - 1] = sDoomDesireDescription,
+     [MOVE_PSYCHO_BOOST - 1] = sPsychoBoostDescription,
++    [MOVE_FAIRY_WIND - 1] = sFairyWindDescription,
++    [MOVE_MOONBLAST - 1] = sMoonblastDescription,
++    [MOVE_PLAY_ROUGH - 1] = sPlayRoughDescription,
++    [MOVE_DAZZLING_GLEAM - 1] = sDazzlingGleamDescription,
++    [MOVE_DISARMING_VOICE - 1] = sDisarmingVoiceDescription,
++    [MOVE_DRAINING_KISS - 1] = sDrainingKissDescription,
++    [MOVE_BABY_DOLL_EYES - 1] = sBabyDollEyesDescription,
+ };
+diff --git a/src/data/text/move_names.h b/src/data/text/move_names.h
+index 9f540f1..f3f6d3e 100644
+--- a/src/data/text/move_names.h
++++ b/src/data/text/move_names.h
+@@ -355,4 +355,11 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
+     [MOVE_WATER_PULSE] = _("WATER PULSE"),
+     [MOVE_DOOM_DESIRE] = _("DOOM DESIRE"),
+     [MOVE_PSYCHO_BOOST] = _("PSYCHO BOOST"),
++    [MOVE_FAIRY_WIND] = _("FAIRY WIND"),
++    [MOVE_MOONBLAST] = _("MOONBLAST"),
++    [MOVE_PLAY_ROUGH] = _("PLAY ROUGH"),
++    [MOVE_DAZZLING_GLEAM] = _("DAZZLE GLEAM"),
++    [MOVE_DISARMING_VOICE] = _("DISARM VOICE"),
++    [MOVE_DRAINING_KISS] = _("DRAIN KISS"),
++    [MOVE_BABY_DOLL_EYES] = _("BABY-DOLL"),
+ };
+diff --git a/src/data/union_room.h b/src/data/union_room.h
+index 8f17bb8..9ceedd9 100644
+--- a/src/data/union_room.h
++++ b/src/data/union_room.h
+@@ -885,6 +885,7 @@ static const struct ListMenuItem sTradingBoardTypes[NUMBER_OF_MON_TYPES] = {
+     { gTypeNames[TYPE_DRAGON],   TYPE_DRAGON         },
+     { gTypeNames[TYPE_STEEL],    TYPE_STEEL          },
+     { gTypeNames[TYPE_DARK],     TYPE_DARK           },
++    { gTypeNames[TYPE_FAIRY],   TYPE_FAIRY         },
+     { sText_Exit,                NUMBER_OF_MON_TYPES }
+ };
+ 
+diff --git a/src/menu.c b/src/menu.c
+index 8dd4b48..1b6e660 100644
+--- a/src/menu.c
++++ b/src/menu.c
+@@ -156,6 +156,7 @@ static const struct MenuInfoIcon sMenuInfoIcons[] =
+     [TYPE_ICE + 1]      = { 32, 12, 0x4C },
+     [TYPE_DRAGON + 1]   = { 32, 12, 0xA0 },
+     [TYPE_DARK + 1]     = { 32, 12, 0x8C },
++    [TYPE_FAIRY + 1]    = { 32, 12, 0x100 },
+     [MENU_INFO_ICON_TYPE]      = { 42, 12, 0xA8 },
+     [MENU_INFO_ICON_POWER]     = { 42, 12, 0xC0 },
+     [MENU_INFO_ICON_ACCURACY]  = { 42, 12, 0xC8 },
+@@ -2224,7 +2225,7 @@ void ListMenuLoadStdPalAt(u8 palOffset, u8 palId)
+ 
+ void BlitMenuInfoIcon(u8 windowId, u8 iconId, u16 x, u16 y)
+ {
+-    BlitBitmapRectToWindow(windowId, ResolveBitmapSource(gMenuInfoElements_Gfx, sMenuInfoIcons[iconId].offset * 32), 0, 0, 128, 128, x, y, sMenuInfoIcons[iconId].width, sMenuInfoIcons[iconId].height);
++    BlitBitmapRectToWindow(windowId, ResolveBitmapSource(gMenuInfoElements_Gfx, sMenuInfoIcons[iconId].offset * 32), 0, 0, 128, 144, x, y, sMenuInfoIcons[iconId].width, sMenuInfoIcons[iconId].height);
+ }
+ 
+ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
+diff --git a/src/pokedex.c b/src/pokedex.c
+index dc2dd3b..e996d7f 100644
+--- a/src/pokedex.c
++++ b/src/pokedex.c
+@@ -1434,6 +1434,7 @@ static const struct SearchOptionText sDexSearchTypeOptions[NUMBER_OF_MON_TYPES +
+     {gText_DexEmptyString, gTypeNames[TYPE_ICE]},
+     {gText_DexEmptyString, gTypeNames[TYPE_DRAGON]},
+     {gText_DexEmptyString, gTypeNames[TYPE_DARK]},
++    {gText_DexEmptyString, gTypeNames[TYPE_FAIRY]},
+     {},
+ };
+ 
+@@ -1468,6 +1469,7 @@ static const u8 sDexSearchTypeIds[NUMBER_OF_MON_TYPES] =
+     TYPE_ICE,
+     TYPE_DRAGON,
+     TYPE_DARK,
++    TYPE_FAIRY,
+ };
+ 
+ // Number pairs are the task data for tracking the cursor pos and scroll offset of each option list
+diff --git a/src/pokemon_summary_screen.c b/src/pokemon_summary_screen.c
+index eaff1fc..3ac0214 100644
+--- a/src/pokemon_summary_screen.c
++++ b/src/pokemon_summary_screen.c
+@@ -894,6 +894,10 @@ static const union AnimCmd sSpriteAnim_TypeDark[] = {
+     ANIMCMD_FRAME(TYPE_DARK * 8, 0, FALSE, FALSE),
+     ANIMCMD_END
+ };
++static const union AnimCmd sSpriteAnim_TypeFairy[] = {
++    ANIMCMD_FRAME(TYPE_FAIRY * 8, 0, FALSE, FALSE),
++    ANIMCMD_END
++};
+ static const union AnimCmd sSpriteAnim_CategoryCool[] = {
+     ANIMCMD_FRAME((CONTEST_CATEGORY_COOL + NUMBER_OF_MON_TYPES) * 8, 0, FALSE, FALSE),
+     ANIMCMD_END
+@@ -933,6 +937,7 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
+     sSpriteAnim_TypeIce,
+     sSpriteAnim_TypeDragon,
+     sSpriteAnim_TypeDark,
++    sSpriteAnim_TypeFairy,
+     sSpriteAnim_CategoryCool,
+     sSpriteAnim_CategoryBeauty,
+     sSpriteAnim_CategoryCute,
+@@ -976,6 +981,7 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIE
+     [TYPE_ICE] = 14,
+     [TYPE_DRAGON] = 15,
+     [TYPE_DARK] = 13,
++    [TYPE_FAIRY] = 14,
+     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_COOL] = 13,
+     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_BEAUTY] = 14,
+     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_CUTE] = 14,

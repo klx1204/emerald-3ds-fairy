@@ -68,9 +68,12 @@ jobs:
         run: |
           python3 -m py_compile tools/port_common/gen_asset_table.py
           python3 builder/tests/test_asset_table_compatibility.py
-          python3 tools/bootstrap.py --make -j4 --python python3
+          python3 tools/bootstrap.py --clean
+          make -C build/upstream tools -j4
+          make -C build/upstream generated -j4
+          make -C build/upstream/3ds_port -j4 PYTHON=python3 emerald3ds.3dsx
       - name: Host tests and link audit
-        run: make -C build/upstream/3ds_port verify PYTHON=python3
+        run: make -C build/upstream/3ds_port verify-input verify-pak verify-video verify-daynight verify-encounters verify-clock-store PYTHON=python3
       - name: Production timed encounter rules
         run: python3 3ds_port/tests/encounter_tables_test.py --tree build/upstream
       - name: Production berry clock integration

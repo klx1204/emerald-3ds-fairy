@@ -462,7 +462,8 @@ def main() -> None:
     parser.add_argument(
         "--cfru",
         type=Path,
-        default=Path("/Users/klx1204/Downloads/Complete-Fire-Red-Upgrade"),
+        default=Path("Complete-Fire-Red-Upgrade"),
+        help="path to a CFRU checkout (for graphics/Other/Type_Icons/Type_Icons.bmp)",
     )
     args = parser.parse_args()
 

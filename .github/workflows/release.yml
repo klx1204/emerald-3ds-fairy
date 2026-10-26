@@ -16,7 +16,10 @@ jobs:
 
       - name: Build English 3DSX in devkitARM
         run: |
-          docker run --rm -v "$PWD":/work -w /work devkitpro/devkitarm:latest bash -lc '
+          docker run --rm \
+            -e DEVKITPRO=/opt/devkitpro \
+            -e DEVKITARM=/opt/devkitpro/devkitARM \
+            -v "$PWD":/work -w /work devkitpro/devkitarm:latest bash -lc '
             export PATH=/opt/devkitpro/devkitARM/bin:/opt/devkitpro/tools/bin:$PATH
             apt-get update &&
             apt-get install -y --no-install-recommends \

@@ -27,17 +27,19 @@ jobs:
             python3 tools/bootstrap.py --clean &&
             make -C build/upstream tools -j4 &&
             make -C build/upstream generated -j4 &&
-            make -C build/upstream/3ds_port -j4 PYTHON=python3 emerald3ds.3dsx'
+            make -C build/upstream/3ds_port -j4 PYTHON=python3 emerald3ds.3dsx &&
+            make -C build/upstream/3ds_port release PYTHON=python3'
 
       - name: Stage release assets
         run: |
           mkdir -p ship
-          cp build/upstream/3ds_port/emerald3ds.3dsx ship/Emerald3DS.3dsx
-          cp build/upstream/3ds_port/emerald3ds.smdh ship/Emerald3DS.smdh
+          cp build/upstream/3ds_port/dist/Emerald3DS.3dsx ship/Emerald3DS.3dsx
+          cp build/upstream/3ds_port/dist/Emerald3DS.smdh ship/Emerald3DS.smdh
 
       - uses: softprops/action-gh-release@v2
         with:
           files: |
             ship/Emerald3DS.3dsx
             ship/Emerald3DS.smdh
+          overwrite_files: true
           generate_release_notes: true

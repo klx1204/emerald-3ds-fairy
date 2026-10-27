@@ -79,6 +79,14 @@ The resulting pokeemerald changes are committed in
 `patches/pokeemerald/0900-fairy.patch`; the port-side palette entry is in
 `3ds_port/src/3ds_bottom_ui.c`.
 
+## Releasing
+
+This fork publishes the engine, the recipe and the universal builder ZIP
+together; they must come from the same build tree, because the gamedata image
+holds pointers into the executable.  See
+[Fork releases](RELEASING.md#fork-releases-emerald-3ds-fairy) for the exact
+commands.
+
 ## Known limitations
 
 - **English-only.**  `tools/locales/{spanish,french,italian}.json.gz` pin the

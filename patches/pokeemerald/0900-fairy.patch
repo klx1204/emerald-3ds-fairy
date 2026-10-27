@@ -100,14 +100,14 @@ JPDHLkV1gRmOeX*U
 
 diff --git a/graphics/types/fairy.png b/graphics/types/fairy.png
 new file mode 100644
-index 0000000000000000000000000000000000000000..609fbd345d9cb907707a965b39ee4040a3a9f596
+index 0000000000000000000000000000000000000000..8852b40b16e6383e242e6520285be545a8964d16
 GIT binary patch
-literal 224
-zcmeAS@N?(olHy`uVBq!ia0vp^3P3Et!VDx^^%AmxltF+`h%1mjd-VUBDc_2t=44Iz
-zHs{{GtN-75SqA-&>i&Op%ao*~C5}t(HSe7=Wl3{&@&Et-cbFcu1?tK6ba4!+n6tLe
-zkgLH!faUn%-|b6IMjui0{U=z{T2|?`;bU%+vbx)aW5=E*>}*ZkKC{9rZa?dzJr#wE
-zz3(}5yPR6k8lko6?31(W*t~C9Z{Eiy$eZ?BKu=}zS-(}+PR)B4)w)1x>H>$)JHPPD
-YawUidc&*-X3TQ2Zr>mdKI;Vst0B;dsrvLx|
+literal 249
+zcmV<V00#ewP)<h;3K|Lk000e1NJLTq001BW000mK0{{R3g)U%f0000mP)t-s0002Z
+z#s937_H$aCYLxbz-rm*!?n*gQ|5}Ux#k7=SVx&Q&-h;iAl%#`ubN~PUxHZ8&0001l
+zNkl<Zc${62yA1*{5JcauPUi&CBJSXb>=vkj$fXcc1|47{B80Ta_DRT|Y@TNJ1C!)%
+z8~j`DBUp6wd=+B!F1Y9dA;1Eb*~-bR_!?2*nn)i=t)n0TIfHDC^okX*;*0H-9`D5p
+zs+_>O&&ZI?o)}h7zf8YqTmIK7$HxF(^Y{D!npG-#;fLXX00000NkvXXu0mjf350M<
 
 literal 0
 HcmV?d00001
@@ -125,6 +125,19 @@ index 05dfe5a..e078508 100644
  contest_types := cool beauty cute smart tough
  
  
+diff --git a/include/battle_main.h b/include/battle_main.h
+index ea6e5be..d405be1 100644
+--- a/include/battle_main.h
++++ b/include/battle_main.h
+@@ -82,7 +82,7 @@ extern struct MultiPartnerMenuPokemon gMultiPartnerParty[MULTI_PARTY_SIZE];
+ extern const struct SpriteTemplate gUnusedBattleInitSprite;
+ extern const struct OamData gOamData_BattleSpriteOpponentSide;
+ extern const struct OamData gOamData_BattleSpritePlayerSide;
+-extern const u8 gTypeEffectiveness[336];
++extern const u8 gTypeEffectiveness[372];
+ extern const u8 gTypeNames[NUMBER_OF_MON_TYPES][TYPE_NAME_LENGTH + 1];
+ extern const struct TrainerMoney gTrainerMoneyTable[];
+ extern const u8 gAbilityNames[][ABILITY_NAME_LENGTH + 1];
 diff --git a/include/constants/moves.h b/include/constants/moves.h
 index 324bfb8..e184d5f 100644
 --- a/include/constants/moves.h
@@ -161,9 +174,18 @@ index 0d6a20e..5f540f2 100644
  // Pokémon egg groups
  #define EGG_GROUP_NONE                0
 diff --git a/src/battle_main.c b/src/battle_main.c
-index 915f419..80df091 100644
+index 915f419..ff4a367 100644
 --- a/src/battle_main.c
 +++ b/src/battle_main.c
+@@ -335,7 +335,7 @@ static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
+ // 10 is ×1.0 TYPE_MUL_NORMAL
+ // 05 is ×0.5 TYPE_MUL_NOT_EFFECTIVE
+ // 00 is ×0.0 TYPE_MUL_NO_EFFECT
+-const u8 gTypeEffectiveness[336] =
++const u8 gTypeEffectiveness[372] =
+ {
+     TYPE_NORMAL, TYPE_ROCK, TYPE_MUL_NOT_EFFECTIVE,
+     TYPE_NORMAL, TYPE_STEEL, TYPE_MUL_NOT_EFFECTIVE,
 @@ -445,6 +445,18 @@ const u8 gTypeEffectiveness[336] =
      TYPE_STEEL, TYPE_ICE, TYPE_MUL_SUPER_EFFECTIVE,
      TYPE_STEEL, TYPE_ROCK, TYPE_MUL_SUPER_EFFECTIVE,

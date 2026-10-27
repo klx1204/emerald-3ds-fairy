@@ -9,7 +9,9 @@
 - `LEVEL_UP` and `EGG_MOVES`: the Gen 6 `6L` / `6E` entries.
 
 `apply.py` writes those tables into a bootstrapped pokeemerald tree and
-generates the two graphics:
+generates the graphics: the summary badge is redrawn from the game's own
+Water badge (same shape, border and font), and the menu label is adapted from
+CFRU's `Type_Icons.bmp`.
 
 ```bash
 python3 tools/fairy/apply.py --tree build/upstream \

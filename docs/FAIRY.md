@@ -62,7 +62,7 @@ learn Moonblast, and Skitty learns Disarming Voice).
 | Learnsets | Pokémon Showdown `data/learnsets.ts`, tags `6L` and `6E` |
 | Species types | Pokémon Showdown `data/pokedex.ts` |
 | Type chart | Pokémon Showdown `data/typechart.ts`, cross-checked with CFRU and PokeAPI |
-| Icon/label artwork | CFRU `graphics/Other/Type_Icons/Type_Icons.bmp`, remapped to the GBA type palettes |
+| Icon/label artwork | Summary badge redrawn from the game's Water badge (same shape, border and font); menu label adapted from CFRU |
 
 ## Regenerating
 

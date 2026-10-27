@@ -87,6 +87,15 @@ def apply_type_system(tree: Path) -> None:
         )
         write(path, text)
 
+    # The table is declared with a fixed size; twelve new rows need 36 more
+    # bytes (336 -> 372) or the compiler silently reports them as excess
+    # initializers.
+    for relative in ("include/battle_main.h", "src/battle_main.c"):
+        path = tree / relative
+        text = read(path)
+        if "gTypeEffectiveness[336]" in text:
+            write(path, text.replace("gTypeEffectiveness[336]", "gTypeEffectiveness[372]"))
+
     path = tree / "src/battle_main.c"
     text = read(path)
     if "TYPE_FAIRY, TYPE_FIGHTING" not in text:
@@ -404,16 +413,66 @@ def map_fairy_cell(cell, palette, transparent_rgb, pink_index, white_index, dark
     return out
 
 
+def make_water_style_fairy(tree: Path) -> None:
+    """Draw FAIRY with the original Water badge's shape, border and font."""
+    from PIL import Image
+
+    water = Image.open(tree / "graphics/types/water.png")
+    palette = water.getpalette()
+
+    def glyph(name, x0, x1):
+        src = Image.open(tree / ("graphics/types/%s.png" % name))
+        return [[src.getpixel((x, y)) for x in range(x0, x1 + 1)] for y in range(4, 12)]
+
+    # F from FIGHT, A and R from WATER, I from ICE, Y from FLYING.  The
+    # original labels are 24 px wide; two single-pixel gaps keep FAIRY at the
+    # same width and centred inside the badge.
+    glyphs = [
+        glyph("fight", 5, 9),
+        glyph("water", 9, 13),
+        glyph("ice", 9, 11),
+        glyph("water", 24, 27),
+        glyph("flying", 11, 15),
+    ]
+    gaps = {0: 1, 2: 1}
+
+    out = Image.new("P", (32, 16))
+    out.putpalette(palette)
+    for y in range(16):
+        for x in range(32):
+            value = water.getpixel((x, y))
+            if value == 4:
+                value = 8
+            elif value == 5:
+                value = 12
+            out.putpixel((x, y), value)
+
+    # Clear the old WATER lettering, leaving a flat pink field.
+    for y in range(4, 12):
+        for x in range(3, 30):
+            out.putpixel((x, y), 8)
+
+    total = sum(len(glyph_rows[0]) for glyph_rows in glyphs) + sum(gaps.values())
+    x = (32 - total) // 2
+    for index, glyph_rows in enumerate(glyphs):
+        width = len(glyph_rows[0])
+        for yy, row in enumerate(glyph_rows):
+            for xx, value in enumerate(row):
+                if value in (14, 15):
+                    out.putpixel((x + xx, 4 + yy), value)
+        x += width + gaps.get(index, 0)
+
+    out.save(tree / "graphics/types/fairy.png")
+
+
 def make_icons(tree: Path, cfru: Path) -> None:
     from PIL import Image
 
     bmp = Image.open(cfru / "graphics/Other/Type_Icons/Type_Icons.bmp").convert("RGB")
     cell = bmp.crop((0, 128, 32, 144))
 
-    # 32x16 type icon, drawn with move_types_2 (the pink/psychic palette).
-    pal = read_jasc(tree / "graphics/types/move_types_2.pal")
-    fairy = map_fairy_cell(cell, [v for rgb in pal for v in rgb], (120, 152, 128), 8, 10, 15, 13)
-    fairy.save(tree / "graphics/types/fairy.png")
+    # 32x16 type icon, using the original Water badge as the template.
+    make_water_style_fairy(tree)
 
     # 32x12 menu label, appended at tile 0x100 of menu_info.png.
     menu_path = tree / "graphics/interface/menu_info.png"

@@ -30,21 +30,20 @@
   <a href="https://discord.com/invite/tfqHF8496P"><img src="https://img.shields.io/badge/Discord-Join_the_community-5865F2?style=for-the-badge&amp;logo=discord&amp;logoColor=white" alt="Join the community on Discord"></a>
 </p>
 
-## Get the latest version — directly in your browser
+## Get this fork
 
-**Visit [emerald-3ds.com](https://emerald-3ds.com/) to generate and download the latest version from your own supported ROM. No desktop builder or source code download is required.**
+**Download `Emerald3DS-Fairy-Builder-universal.zip` from the [latest release](https://github.com/klx1204/emerald-3ds-fairy/releases/latest), run it on Windows, macOS or Linux, and point it at your own clean English Emerald ROM.**
 
-The website includes the **complete installation and update instructions**, **sound setup** and **frequently asked questions**. Start there whether you are installing for the first time, updating or troubleshooting.
+The ZIP contains the builder, the engine and the data recipe; the game data is generated on your computer and nothing is uploaded. See [Getting started](#getting-started) for the three commands.
 
-> **Need help? Please read the instructions and FAQ on [emerald-3ds.com](https://emerald-3ds.com/) before opening an issue or asking on Discord.** If your question is still unanswered, include your console or emulator, game version and the exact error message when asking for help.
+> **Note:** [emerald-3ds.com](https://emerald-3ds.com/) is the upstream project's site. It builds the vanilla game, **not** this Fairy fork, but its installation guide, sound setup and FAQ apply unchanged.
 
 <p align="center">
   <a href="#screenshots">Screenshots</a> &nbsp; · &nbsp;
   <a href="#features">Features</a> &nbsp; · &nbsp;
-  <a href="https://emerald-3ds.com/">Web builder, instructions &amp; FAQ</a> &nbsp; · &nbsp;
+  <a href="https://emerald-3ds.com/">Upstream instructions &amp; FAQ</a> &nbsp; · &nbsp;
   <a href="#documentation">Documentation</a> &nbsp; · &nbsp;
-  <a href="#community">Community</a> &nbsp; · &nbsp;
-  <a href="#support-the-project">Support the project</a>
+  <a href="#community">Community</a>
 </p>
 
 ---
@@ -158,62 +157,53 @@ bugs, and back up your save before trying it.
 
 ## Getting started
 
-### Recommended: use the website
+### Recommended: the universal builder
 
-1. Open **[emerald-3ds.com](https://emerald-3ds.com/)** and follow the instructions for your console or emulator.
-2. Select your **own clean, supported Pokémon Emerald ROM** in the web builder (see [supported cartridges](#supported-cartridges)).
-3. Generate and download the game files, then follow the website's installation guide to place them correctly.
-4. Complete the **sound setup** described in the guide before launching the game.
+1. Download `Emerald3DS-Fairy-Builder-universal.zip` from the [latest release of this fork](https://github.com/klx1204/emerald-3ds-fairy/releases/latest) and extract the whole ZIP.
+2. Install **Python 3.11 or newer** with Pillow, in a virtual environment next to the launchers:
+   ```sh
+   python3 -m venv .venv
+   .venv/bin/pip install -r requirements.txt      # Windows: .venv\Scripts\pip install -r requirements.txt
+   ```
+   The launchers use `.venv` automatically when it exists.
+3. Start the builder:
+   - Windows: double-click `run-builder.bat`
+   - macOS: `./run-builder.command` (or double-click it)
+   - Linux: `./run-builder.sh`
+4. Choose your clean English Emerald ROM and your SD card, then press **Install**.
+5. Complete the **sound setup** described in the [installation guide](docs/INSTALLATION.md) before launching the game.
 
-**Everything is generated in your browser. You do not need to download or install the Windows builder, Python or this repository.** You only download the resulting game files. Your ROM is processed locally in your browser and is not uploaded.
+The same ZIP works on every system: it holds the builder source, the engine-only 3DSX and the data recipe, and the game data is generated on your own computer from your own clean ROM. Nothing is uploaded, and your ROM is only read, not copied or modified.
 
-For a physical console, you need a **Nintendo 3DS / 2DS family console with custom firmware** and access to its SD card. Follow the website's instructions for the available launch methods.
+The window needs Tk, which the python.org and Homebrew builds include; on Linux install `python3-tk`. Without Tk the command line still works:
+
+```sh
+./run-builder.sh build --rom /path/to/rom.gba --output out
+./run-builder.sh install --rom /path/to/rom.gba --sd /path/to/card
+```
+
+The builder writes `/3ds/emerald3ds/Emerald3DS.3dsx`, `Emerald3DS.smdh` and `emerald3ds.pak`. It needs an Internet connection only to download the optional follower sprites.
+
+See the [builder documentation](builder/) for additional commands, and the [installation guide](docs/INSTALLATION.md) for updates.
 
 ### Supported cartridges
 
-The game is built in the language of the cartridge you dump. Only clean,
-unmodified dumps are accepted:
+This fork is **English-only**: it accepts the English cartridge and nothing else. Only clean, unmodified dumps are accepted.
 
 | Language | Cartridge | Game code |
 | :--- | :--- | :--- |
 | English | Pokémon Emerald Version (USA, Europe) | BPEE |
-| Spanish | Pokémon Edición Esmeralda (Spain) | BPES |
-| French | Pokémon Version Émeraude (France) | BPEF |
-| Italian | Pokémon Versione Smeraldo (Italy) | BPEI |
 
-Other languages (German, Japanese) and ROM hacks are not supported.
+The Spanish, French and Italian builds of the upstream project are not part of this fork, and other languages (German, Japanese) and ROM hacks are not supported.
 
 ### Updating or having trouble?
 
-**Use the [website's update instructions and FAQ](https://emerald-3ds.com/) as your first stop.** Follow the steps for the version you are installing, including regenerating the data pack when required.
+**The [upstream website](https://emerald-3ds.com/) and the [installation guide](docs/INSTALLATION.md) cover the console setup, sound and updates; that site's web builder produces the vanilla game, not this fork.**
 
 - **No sound?** Follow the sound setup instructions; the required DSP firmware file is separate from the generated game files.
 - **Using an emulator?** Follow the emulator instructions and use its emulated SD card location.
-- **Missing or incompatible data pack?** Check the installation and update instructions and make sure your files match the release.
-- **Still stuck?** Check the FAQ before asking for help on Discord or opening an issue.
-
-<details>
-<summary><strong>Alternative: desktop builder (Windows, Linux and macOS)</strong></summary>
-
-### Windows
-
-1. Download `Emerald3DS-vX.Y.Z-Windows.zip` from the [latest GitHub release](https://github.com/ZallaxDev/pokeemerald-3Ds-dualscreen/releases/latest) and extract the whole ZIP.
-2. Run `Emerald3DS-Builder.exe`, choose your supported ROM and your SD card, then press **Install**.
-3. Follow the [installation guide](docs/INSTALLATION.md), including sound setup, and launch the game from the Homebrew Launcher.
-
-The builder writes `/3ds/emerald3ds/Emerald3DS.3dsx`, `Emerald3DS.smdh` and `emerald3ds.pak`. Your ROM is only read, not copied, uploaded or modified. The desktop builder needs an Internet connection only to download the optional follower sprites.
-
-### Linux and macOS
-
-Run the builder from source with **Python 3.11+ and Pillow**, using the `payload/` folder from the matching release ZIP:
-
-```sh
-python -m emerald3ds_builder --payload /path/to/payload install --rom /path/to/rom.gba --sd /path/to/card
-```
-
-See the [builder documentation](builder/) for setup and additional commands, and the [installation guide](docs/INSTALLATION.md) for updates.
-
-</details>
+- **Missing or incompatible data pack?** Generate the pack again with the builder from the same release as the 3DSX.
+- **Still stuck?** Open an issue on [this fork](https://github.com/klx1204/emerald-3ds-fairy/issues); the upstream Discord and issue tracker are for the vanilla project.
 
 ## About this repository
 

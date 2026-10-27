@@ -234,3 +234,60 @@ case-insensitive FAT.
 
 The same pack must never be attached to a release or an issue: it is
 generated from the player's ROM.
+
+## Fork releases (emerald-3ds-fairy)
+
+This fork publishes a smaller asset set than upstream, because it has no
+website, no localizations and no PyInstaller executable:
+
+| Asset | For |
+|---|---|
+| `Emerald3DS.3dsx`, `Emerald3DS.smdh` | the engine; CI builds them from the tag |
+| `Emerald3DS-Fairy-Builder-universal.zip` | the builder for Windows, macOS and Linux (Python 3.11+ and Pillow) |
+| `emerald3ds.recipe` | the recipe inside that ZIP, also attached on its own |
+| `SHA256SUMS.txt` | SHA-256 of the assets above |
+
+`emerald3ds.recipe` is generated from the clean ROM on a developer machine and
+must never be built in CI: the ROM is not there, and the recipe's ABI must be
+the one the tagged engine was built with. The generators that fill in the
+voxel data are deterministic across Python and Pillow versions, so the
+Linux-built engine and the recipe made on macOS agree.
+
+```sh
+# 1. engine (same command as CI) and the engine-only data it needs
+python tools/bootstrap.py --clean
+make -C build/upstream tools generated -j4
+make -C build/upstream/3ds_port -j4 PYTHON=python3 emerald3ds.3dsx
+make -C build/upstream/3ds_port release PYTHON=python3
+
+# 2. recipe: needs your clean ROM and a clean pret/pokeemerald GBA ELF
+#    (agbcc build of the pinned commit: its symbols name the data)
+python tools/gen_recipe.py \
+    --romfs build/upstream/3ds_port/romfs --rom baserom.gba \
+    --out dist/emerald3ds.recipe --release v0.4.0-fairy.1 \
+    --elf build/upstream/3ds_port/build/emerald3ds_3dsx.elf \
+    --gba-elf /path/to/pokeemerald.elf \
+    --image-elf build/upstream/3ds_port/build/gamedata_image.elf \
+    --image-map build/upstream/3ds_port/build/gamedata_image.map \
+    --nm /opt/devkitpro/devkitARM/bin/arm-none-eabi-nm \
+    --decomp build/upstream
+
+# 3. universal builder ZIP (payload + builder source + launchers)
+python tools/package_universal_builder.py \
+    --tree build/upstream --recipe dist/emerald3ds.recipe \
+    --out dist/Emerald3DS-Fairy-Builder-universal.zip
+
+# 4. before publishing: build a pack with the ZIP itself and boot it
+#    (see "Test before publishing"); then attach everything to the release
+gh release upload v0.4.0-fairy.1 --clobber \
+    dist/Emerald3DS-Fairy-Builder-universal.zip dist/emerald3ds.recipe \
+    dist/Emerald3DS.3dsx dist/Emerald3DS.smdh
+```
+
+The engine and the recipe must come from the **same build tree**: the
+gamedata image embeds pointers into the executable, so a 3DSX compiled
+elsewhere (even from the same sources, with another devkitARM) has a different
+data ABI and its players' packs would be rejected. `ci.yml` still compiles the
+engine on every push as a check, but tag pushes do not publish anything: build
+the engine, generate the recipe and package the ZIP on one machine, then
+upload those exact files. Do not rebuild the 3DSX after generating the recipe.

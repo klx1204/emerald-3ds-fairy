@@ -26,7 +26,15 @@ Unofficial Fairy fork, based on upstream Emerald 3DS 0.4.0.
   special split is enabled; under the default Gen 3 rules Fairy moves are
   special.
 - Added the Fairy type label and icon, adapted from CFRU's
-  `Type_Icons.bmp`; see `NOTICE.md`.
+  `Type_Icons.bmp`; see `NOTICE.md`. The battle summary badge is drawn from
+  the game's own Water badge so it matches the other types; the bottom-screen
+  type icon uses the same palette.
+- Enlarged `gTypeEffectiveness` so all 360 entries survive compilation; the
+  last eight rows (Fairy's and the retconned match-ups) were previously
+  dropped as excess elements and the game fell back to neutral damage.
+- Added `Emerald3DS-Fairy-Builder-universal.zip`, a source builder that runs
+  on Windows, macOS and Linux with Python 3.11 and Pillow, so players no
+  longer need the upstream Windows executable.
 - English-only for now: the Spanish, French and Italian localization
   manifests pin byte offsets and hashes of the patched sources, so they need
   to be regenerated before those builds can include Fairy.
